@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 const Name = styled.h1`
 color: #2d333f;
-margin: 0;
+margin-bottom: 15px;
+margin-top: 15px;
 overflow: hidden;
 text-overflow: ellipsis;
 font-size: 48px;
 font-weight: 700;
 line-height: 56px;
-margin-block-start: 0.67em;
-margin-block-end: 0.67em;
+//margin-block-start: 0.67em;
+//margin-block-end: 0.67em;
 margin-inline-start: 0px;
 margin-inline-end: 0px;
 border-bottom: 1px solid grey;

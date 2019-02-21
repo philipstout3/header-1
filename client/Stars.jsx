@@ -22,6 +22,19 @@ const UnChecked = styled.div`
   margin-right: 0.25rem;
 `
 
+const RatingNum = styled.div`
+font-family: BrandonText, -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size:14px;
+font-weight:500;
+height:20px;
+line-height:20.02px;
+margin-bottom:0px;
+margin-left:4px;
+margin-right:4px;
+margin-top:0px;
+text-size-adjust:100%;
+`
+
 class Stars extends React.Component {
   constructor (props) {
     super(props);
@@ -39,6 +52,7 @@ class Stars extends React.Component {
         <UnChecked className="fa fa-star" style={{display: this.props.restaurant.rating < 4 ? "block" : "none"}}></UnChecked>
         <Checked className="fa fa-star" style={{display: this.props.restaurant.rating > 4 ? "block" : "none"}}></Checked>
         <HalfCheck className="fa fa-star-half-alt" style={{display: this.props.restaurant.rating > 4 ? "block" : "none"}}></HalfCheck>
+        <RatingNum>{Number(this.props.restaurant.rating).toFixed(1)}</RatingNum>
       </div>
 
 

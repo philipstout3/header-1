@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import Title from './Title.jsx';
 import $ from 'jquery';
 import Stars from './Stars.jsx';
+import Reviews from './Reviews.jsx';
+import Price from './Price.jsx';
+import Type from './Type.jsx';
+import Tags from './Tags.jsx';
 
 
 const Border = styled.div`
@@ -51,7 +55,7 @@ const ParentBorder = styled.div`
   font-size: 1em;
   justify-content: flex-start;
   flex-direction: column;
-  border: 1px solid black;
+  //border: 1px solid black;
   width: 620px;
   height: 400px;
   position: absolute;
@@ -136,7 +140,15 @@ class App extends React.Component {
           </Border>
         <ParentBorder>
           <Title restaurant={this.state.restaurant}/>
-          <Stars restaurant={this.state.restaurant}/>
+          <div style={{display:'flex', justifyContent:'flex-start'}}>
+            <Stars restaurant={this.state.restaurant}/>
+            <Reviews restaurant={this.state.restaurant}/>
+            <Price restaurant={this.state.restaurant}/>
+            <Type restaurant={this.state.restaurant}/>
+          </div>
+          <div style={{display:'flex', justifyContent:'flex-start', marginTop:'20px'}}>
+            <Tags restaurant={this.state.restaurant}/>
+          </div>
         </ParentBorder>
         {/* CODE BELOW SHOULD BE INGORED -- ONLY USED FOR SCROLL TESTING */}
         <div ref={this.photosClicked}>Photos</div>

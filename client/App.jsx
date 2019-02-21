@@ -7,6 +7,7 @@ import Reviews from './Reviews.jsx';
 import Price from './Price.jsx';
 import Type from './Type.jsx';
 import Tags from './Tags.jsx';
+import Description from './Description.jsx';
 
 
 const Border = styled.div`
@@ -146,8 +147,11 @@ class App extends React.Component {
             <Price restaurant={this.state.restaurant}/>
             <Type restaurant={this.state.restaurant}/>
           </div>
-          <div style={{display:'flex', justifyContent:'flex-start', marginTop:'20px'}}>
+          <div style={{display:'flex', justifyContent:'flex-start', marginTop:'25px'}}>
             <Tags restaurant={this.state.restaurant}/>
+          </div>
+          <div style={{display:'flex', justifyContent:'flex-start', marginTop:'35px'}}>
+            <Description />
           </div>
         </ParentBorder>
         {/* CODE BELOW SHOULD BE INGORED -- ONLY USED FOR SCROLL TESTING */}

@@ -74,7 +74,6 @@ class App extends React.Component {
     this.reviewsClicked = React.createRef();
     this.overviewClicked = React.createRef();
     this.twitterClicked = React.createRef();
-    //this.handleScrollToElement = this.handleScrollToElement.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       overviewClicked: true,
@@ -83,6 +82,7 @@ class App extends React.Component {
       reviewsClicked: false,
       twitterClicked: false,
       restaurant: '',
+      restaurantDescSplit: '',
     }
   }
 
@@ -114,6 +114,7 @@ class App extends React.Component {
       success: (data) => {
         this.setState({
           restaurant: data[0],
+          restaurantDescSplit: data[0].description.match(/.{78}/g)
         });
       },
     });
@@ -150,8 +151,8 @@ class App extends React.Component {
           <div style={{display:'flex', justifyContent:'flex-start', marginTop:'25px'}}>
             <Tags restaurant={this.state.restaurant}/>
           </div>
-          <div style={{display:'flex', justifyContent:'flex-start', marginTop:'35px'}}>
-            <Description />
+          <div style={{display:'flex', justifyContent:'flex-start', flexWrap: 'wrap', marginTop:'35px', height:'70px', width:'608px'}}>
+            <Description restaurant={this.state.restaurant} firstLine={this.state.restaurantDescSplit}/>
           </div>
         </ParentBorder>
         {/* CODE BELOW SHOULD BE INGORED -- ONLY USED FOR SCROLL TESTING */}

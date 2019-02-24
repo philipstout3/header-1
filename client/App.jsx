@@ -121,7 +121,7 @@ class App extends React.Component {
   getRestaurantByObjectId(id) {
     $.ajax({
       
-      url: `http://localhost/overview/${id}`,
+      url: `/overview/${id}`,
       method: 'GET',
       contentType: 'application/json',
       success: (data) => {
